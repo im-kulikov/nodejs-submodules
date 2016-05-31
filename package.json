@@ -1,0 +1,26 @@
+{
+  "name": "node-submodules",
+  "version": "1.0.0",
+  "description": "Unity Simple implementation with NodeJS and SocketIO ====================================================",
+  "main": "bin/www",
+  "scripts": {
+    "start": "node bin/www",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@bitbucket.org/yareel/submodules.git"
+  },
+  "author": "Evgeniy Kulikov <im@kulikov.im>",
+  "license": "BSD-3-Clause",
+  "homepage": "https://bitbucket.org/yareel/submodules#readme",
+  "dependencies": {
+    "coffee-script": "^1.10.0",
+    "momentjs": "^1.1.7",
+    "morgan": "^1.7.0",
+    "shortid": "^2.2.6",
+    "sleep": "^3.0.1",
+    "socket.io": "^1.4.6",
+    "socket.io-logger": "0.0.2"
+  }
+}
