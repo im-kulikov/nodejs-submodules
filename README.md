@@ -13,6 +13,9 @@ Then run Unity application.
 ## Third party libraries
 * see [LIBRARIES](LIBRARIES.md) files
 
+## Documentation
+* see [DOCUMENTATION](DOCUMENTATION.md) file
+
 ## License 
 * see [LICENSE](LICENSE) file
 

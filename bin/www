@@ -1,2 +1,27 @@
+"use strict";
+
 require('coffee-script').register();
-require("./../server.coffee");
+var app = require("./../server");
+
+// Запускаем подключения:
+app.io.on('connection', function(socket) {
+
+    // Создаём клиентские данные:
+    socket.data = {};
+
+    // Обработчик подключений к сокету:
+    require('../modules/connection')(app, socket);
+
+    // Обработчик аудио-данных:
+    require('../modules/audio')(app, socket);
+
+    // Обработчик видео-данных:
+    require('../modules/video')(app, socket);
+
+    // Обработчик чата:
+    require('../modules/chat')(app, socket);
+
+    // Обработчик отключений от сокета:
+    require('../modules/disconnect')(app, socket);
+
+});
