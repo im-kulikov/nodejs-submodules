@@ -7,4 +7,4 @@ module.exports = (app, socket)->
     # Логируем событие + данные:
     app.info "Client ##{ socket.data['client'] } disconnected: #{ JSON.stringify(data) }"
     # Создаём глобальное событие об отключении:
-    app.io.emmit 'client-disconnected', id: socket.data['client']
+    app.io.emit 'client-disconnected', id: socket.data['client']
