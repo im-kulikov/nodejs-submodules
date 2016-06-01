@@ -7,4 +7,4 @@ module.exports = (app, socket)->
     # Логируем событие + данные:
     app.info "Получили audio-данные от #{ socket.data['client'] }"
     # Отправляем всем:
-    socket.broadcast.emmit 'audio-send-data', data
+    socket.broadcast.emit 'audio-send-data', data

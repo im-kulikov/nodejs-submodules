@@ -10,7 +10,7 @@ module.exports = (app, socket)->
     # Добавляем ID:
     data.id = socket.data['client']
     # Отправляем всем:
-    socket.broadcast.emmit 'chat-leave', data
+    socket.broadcast.emit 'chat-leave', data
 
   # Получаем данные от пользователя:
   socket.on 'chat-joined', (data)->
@@ -19,7 +19,7 @@ module.exports = (app, socket)->
     # Добавляем ID:
     data.id = socket.data['client']
     # Отправляем всем:
-    socket.broadcast.emmit 'chat-joined', data
+    socket.broadcast.emit 'chat-joined', data
 
   # Получаем данные от пользователя:
   socket.on 'chat-change-name', (data)->
@@ -28,7 +28,7 @@ module.exports = (app, socket)->
     # Добавляем ID:
     data.id = socket.data['client']
     # Отправляем всем:
-    socket.broadcast.emmit 'chat-change-name', data
+    socket.broadcast.emit 'chat-change-name', data
   
   # Получаем данные от пользователя:
   socket.on 'chat-start-typing', (data)->
@@ -37,7 +37,7 @@ module.exports = (app, socket)->
     # Добавляем ID:
     data.id = socket.data['client']
     # Отправляем всем:
-    socket.broadcast.emmit 'chat-start-typing', data
+    socket.broadcast.emit 'chat-start-typing', data
 
   # Получаем данные от пользователя:
   socket.on 'chat-stop-typing', (data)->
@@ -46,7 +46,7 @@ module.exports = (app, socket)->
     # Добавляем ID:
     data.id = socket.data['client']
     # Отправляем всем:
-    socket.broadcast.emmit 'chat-stop-typing', data
+    socket.broadcast.emit 'chat-stop-typing', data
   
   # Получаем сообщение от пользователя:
   socket.on 'chat-message', (data)->
@@ -55,4 +55,4 @@ module.exports = (app, socket)->
     # Добавляем ID:
     data.id = socket.data['client']
     # Отправляем всем:
-    socket.broadcast.emmit 'chat-message', data
+    socket.broadcast.emit 'chat-message', data
