@@ -55,4 +55,5 @@ module.exports = (app, socket)->
     # Добавляем ID:
     data.id = socket.data['client']
     # Отправляем всем:
+    socket.emit 'chat-message', data
     socket.broadcast.emit 'chat-message', data
