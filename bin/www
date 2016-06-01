@@ -8,9 +8,6 @@ app.io.on('connection', function(socket) {
 
     var client = app.shortID();
 
-    // Создаём клиентские данные:
-    socket.data = {};
-
     // Обработчик подключений к сокету:
     require('../modules/connection')(app, socket, client);
 
