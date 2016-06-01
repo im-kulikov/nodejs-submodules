@@ -1,10 +1,10 @@
 "use strict"
 
 # Export modules:
-module.exports = (app, socket)->
+module.exports = (app, socket, client)->
   # Отключение пользователя:
   socket.on 'disconnect', (data)->
     # Логируем событие + данные:
-    app.info "Client ##{ socket.data['client'] } disconnected: #{ JSON.stringify(data) }"
+    app.info "Client ##{ client } disconnected: #{ JSON.stringify(data) }"
     # Создаём глобальное событие об отключении:
-    app.io.emit 'client-disconnected', id: socket.data['client']
+    app.io.emit 'client-disconnected', id: client

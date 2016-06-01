@@ -6,22 +6,24 @@ var app = require("./../server");
 // Запускаем подключения:
 app.io.on('connection', function(socket) {
 
+    var client = app.shortID();
+
     // Создаём клиентские данные:
     socket.data = {};
 
     // Обработчик подключений к сокету:
-    require('../modules/connection')(app, socket);
+    require('../modules/connection')(app, socket, client);
 
     // Обработчик аудио-данных:
-    require('../modules/audio')(app, socket);
+    require('../modules/audio')(app, socket, client);
 
     // Обработчик видео-данных:
-    require('../modules/video')(app, socket);
+    require('../modules/video')(app, socket, client);
 
     // Обработчик чата:
-    require('../modules/chat')(app, socket);
+    require('../modules/chat')(app, socket, client);
 
     // Обработчик отключений от сокета:
-    require('../modules/disconnect')(app, socket);
+    require('../modules/disconnect')(app, socket, client);
 
 });
