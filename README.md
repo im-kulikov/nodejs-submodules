@@ -16,7 +16,7 @@ Then run Unity application.
 ## Documentation API:
 * see [DOCUMENTATION](DOCUMENTATION.md) file
 
-## Documentatation DotNet:
+## Documentation DotNet:
 * see [DotNet Documentation](https://www.dropbox.com/s/3ux89lyv75810mo/SocketIODotNet.pdf?dl=0) file
 
 ## License 
