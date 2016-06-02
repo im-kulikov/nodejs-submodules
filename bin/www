@@ -2,6 +2,7 @@
 
 require('coffee-script').register();
 var app = require("./../server");
+var players = {};
 
 // Запускаем подключения:
 app.io.on('connection', function(socket) {
@@ -19,6 +20,9 @@ app.io.on('connection', function(socket) {
 
     // Обработчик чата:
     require('../modules/chat')(app, socket, client);
+
+    // Обработчик движения:
+    require('../modules/move')(app, socket, client, players);
 
     // Обработчик отключений от сокета:
     require('../modules/disconnect')(app, socket, client);

@@ -30,3 +30,125 @@ Documentation:
 * `disconnect` - server receive this event
 * `client-disconnected` - server informs the user disconnected, send data to all: `{ id: <client_id> }` 
 
+## GameMove:
+
+* `game-spawn` - client spawn
+```
+Receive:
+    NULL
+Emit to client:
+    multiple: player object
+    {
+        id: <player_id>,
+        position: {
+            x: <float>,
+            y: <float>,
+            z: <float>
+        },
+        rotation: {
+            w: <float>,
+            x: <float>,
+            y: <float>,
+            z: <float>
+        }
+    }
+Broadcast to clients:
+    single: player object
+    {
+        id: <player_id>,
+        position: {
+            x: <float>,
+            y: <float>,
+            z: <float>
+        },
+        rotation: {
+            w: <float>,
+            x: <float>,
+            y: <float>,
+            z: <float>
+        }
+    }
+```
+
+* `game-get-position` - request clients positions
+```
+Receive:
+    NULL
+Emit to clients:
+    NULL
+```
+
+* `game-set-position` - set client position
+```
+Receive:
+    position object
+    {
+        position: {
+            x: <float>,
+            y: <float>,
+            z: <float>
+        },
+        rotation: {
+            w: <float>,
+            x: <float>,
+            y: <float>,
+            z: <float>
+        }
+    }
+Broadcast to clients:
+    position object
+    {
+        id: <player_id>
+        position: {
+            x: <float>,
+            y: <float>,
+            z: <float>
+        },
+        rotation: {
+            w: <float>,
+            x: <float>,
+            y: <float>,
+            z: <float>
+        }
+    }
+```
+
+* `game-move` - receive client movement
+```
+Receive:
+    position object
+    {
+        position: {
+            x: <float>,
+            y: <float>,
+            z: <float>
+        },
+    }
+Broadcast to clients:
+    position object
+    {
+        id: <player_id>
+        position: {
+            x: <float>,
+            y: <float>,
+            z: <float>
+        },
+        rotation: {
+            w: <float>,
+            x: <float>,
+            y: <float>,
+            z: <float>
+        }
+    }
+```
+
+* `game-disconnect` - client disconnected
+```
+Receive:
+    NULL
+Broadcast to clients:
+    who disconnected
+    {
+        id: <player_id>
+    }
+```
